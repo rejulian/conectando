@@ -1,0 +1,45 @@
+#main {
+    height: 95vh;
+    background-color: #ffffff;
+    opacity: 1;
+    background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #ffffff 18px), repeating-linear-gradient(#ebebff55, #ebebff);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main__text{
+    font-family: system-ui;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.main__text span{
+    font-size: 50px;
+    font-weight: 800;
+}
+
+.main__form{
+    width: 250px;
+    margin: 0 auto;
+    display: flex;
+    gap: 10px;
+    position: relative;
+}
+
+.main__form input{
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 10px;
+    outline-color: rgb(166, 166, 255);
+}
+
+.form__button{
+    width: 40px;
+    height: 100%;
+    background: none;
+    border: none;
+    position: absolute;
+    right: 0;
+}

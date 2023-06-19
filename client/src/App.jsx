@@ -1,11 +1,22 @@
-import './App.css'
 import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Header from './components/Header/Header'
+import Main from './components/Main/Main'
 
 function App() {
 
   return (
+
     <>
-      <h1>CONECTANDO</h1>
+       <BrowserRouter>
+        <Header/>
+
+        <Routes>
+          <Route path='/' element={<Main/>} />
+        </Routes>
+        
+        {/* Footer */}
+       </BrowserRouter>
     </>
   )
 }
