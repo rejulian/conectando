@@ -1,0 +1,51 @@
+.jobs__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.jobs__container__list{
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:  0 20px;
+}
+
+.job__card {
+    width: 350px;
+    height: 100px;
+    margin: 30px 0 0;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.34);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.34);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.34);
+}
+
+.job__card__img {
+    width: 150px;
+    height: 100%;
+}
+
+.job__card__img img {
+    width: 100% !important;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.job__card__text{
+    width: 100%;
+    margin: 0;
+    padding: 0 10px;
+    text-align: justify;
+}
+
+.job__card__text p{
+    margin: 0;
+}
+
+.description{
+    font-size: 14px;
+}
