@@ -24,8 +24,8 @@ const Header = () => {
                             </li>
                         </ul>
                         <form className="d-flex" role="search">
-                            <a href="/" className='btn secondary'>Iniciar sesion</a>
-                            <a href="" className='btn primary'>Registrarse</a>
+                            <Link href="/" className='btn secondary'>Iniciar sesion</Link>
+                            <Link href="" className='btn primary'>Registrarse</Link>
                         </form>
                     </div>
                 </div>

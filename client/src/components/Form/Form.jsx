@@ -9,7 +9,7 @@ const Form = ({value}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigateTo(`/user/:${query}`)
+    navigateTo(`/job/:${query}`)
   }
 
   return (

@@ -1,0 +1,16 @@
+.footer{
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+}
+
+.footer p{
+    margin: 0;
+}
+
+.footer span{
+    font-weight: 700;
+}
