@@ -1,0 +1,16 @@
+.register__container{
+    min-height: calc(100vh - 116px);
+    width: 300px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
+
+.register__input{
+    border-radius: 5px;
+    border: 1px solid #d9d9d9;
+    outline-color: #8C30F5;
+    padding: 5px 10px;
+}

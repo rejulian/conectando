@@ -16,16 +16,16 @@ const Header = () => {
                             <li className="nav-item">
                                 <Link to="/acerca" className="nav-link">Acerca de</Link>
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <Link to="/prices" className="nav-link">Precios</Link>
-                            </li>
+                            </li> */}
                             <li className="nav-item">
                                 <Link to="/support" className="nav-link">Soporte</Link>
                             </li>
                         </ul>
-                        <form className="d-flex" role="search">
-                            <Link href="/" className='btn secondary'>Iniciar sesion</Link>
-                            <Link href="" className='btn primary'>Registrarse</Link>
+                        <form className="d-flex">
+                            <Link to='/' className='btn secondary'>Iniciar sesion</Link>
+                            <Link to='/register/user' className='btn primary'>Registrarse</Link>
                         </form>
                     </div>
                 </div>

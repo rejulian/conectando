@@ -9,6 +9,7 @@ import Prices from './Routes/Prices/Prices'
 import Support from './Routes/Support/Support'
 import UserDetail from './Routes/UserDetail/UserDetail'
 import Footer from './components/Footer/Footer'
+import UserRegister from './Routes/Register/UserRegister'
 
 function App() {
   return (
@@ -16,18 +17,20 @@ function App() {
     <>
       <BrowserRouter>
         <Header />
-
         <Routes>
+          {/* Register */}
+          <Route path='/register/user' element={<UserRegister/>}/>
+
+          {/* ************ */}
           <Route path='/' element={<Home />} />
-          <Route path='/acerca' element={<Acerca />} />
+          <Route path='/about' element={<Acerca />} />
           <Route path='/prices' element={<Prices />} />
-          <Route path='/support' element={<Support />} />
+          {/* <Route path='/support' element={<Support />} /> */}
           <Route path='/job/:job' element={<ListOfJobs />} />
           <Route path='/user/:id' element={<UserDetail />} />
           <Route path='*' element={<WrongPath />} />
-        </Routes>
 
-        {/* Footer */}
+        </Routes>
         <Footer/>
       </BrowserRouter>
     </>
