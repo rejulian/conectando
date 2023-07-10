@@ -13,7 +13,8 @@ const RegisterForm = () => {
     const [contrasenia2, setContrasenia2] = useState("")
     const [celular, setCelular] = useState("")
     const [localidad, setLocalidad] = useState("")
-
+    const [provincia, setProvincia] = useState("")
+    
     const handleSubmit = (e) => {
         e.preventDefault()
         const data = {
@@ -24,6 +25,7 @@ const RegisterForm = () => {
             celular,
             localidad: localidad.toLowerCase()
         }
+        console.log(data);
     }
 
     useEffect(() => {
@@ -47,11 +49,11 @@ const RegisterForm = () => {
     }, [])
 
     useEffect(() => {
-        if (localidad) {
-            fetch(`https://apis.datos.gob.ar/georef/api/municipios?provincia=${localidad}&max=5000`)
+        if (provincia) {
+            fetch(`https://apis.datos.gob.ar/georef/api/departamentos?provincia=${provincia}&max=5000`)
                 .then((res) => res.json())
                 .then((data) => {
-                    const ciudadesOrdenadas = data.municipios.sort((a, b) => {
+                    const ciudadesOrdenadas = data.departamentos.sort((a, b) => {
                         const nombreA = a.nombre.toLowerCase();
                         const nombreB = b.nombre.toLowerCase();
     
@@ -68,7 +70,7 @@ const RegisterForm = () => {
         } else {
             setFetchCiudades([]);
         }
-    }, [localidad]);
+    }, [provincia]);
 
     return (
         <form onSubmit={handleSubmit} className='register__container'>
@@ -79,15 +81,17 @@ const RegisterForm = () => {
             <input onChange={e => setContrasenia(e.target.value)} className='register__input' type="password" placeholder="Contraseña" name='password' />
             <input onChange={e => setContrasenia2(e.target.value)} className='register__input' type="password" placeholder="Repite la Contraseña" name='password' />
             <input onChange={e => setCelular(e.target.value)} className='register__input' type="text" placeholder="Celular" name='phone' />
-            <select onChange={e => setLocalidad(e.target.value)} className='register__input' name="provincia" id="provincia">
-                <option selected disabled value="null">Seleccione provincia</option>
+            <select onChange={e => setProvincia(e.target.value)} className='register__input' name="provincia" id="provincia">
+                <option selected disabled value="null">
+                    Seleccione provincia
+                </option>
                 {
                     fetchProvincias.map(p => (
                         <option key={p.id} value={p.nombre}> {p.nombre} </option>
                     ))
                 }
             </select>
-            <select className="register__input" name="ciudad" id="ciudad">
+            <select onChange={e=>setLocalidad(`${provincia}, ${e.target.value}`)} className="register__input" name="ciudad" id="ciudad">
                 <option selected disabled value="null">
                     Seleccione ciudad
                 </option>
