@@ -11,6 +11,11 @@
 .register__input{
     border-radius: 5px;
     border: 1px solid #d9d9d9;
-    outline-color: #8C30F5;
+    outline-color: transparent;
     padding: 5px 10px;
+}
+
+.register__input:focus{
+    outline-color: #8C30F5;
+    transition: 1s;
 }
